@@ -1,0 +1,165 @@
+:root {
+    --neon-pink: #FF00AA;
+    --neon-cyan: #00FFFF;
+    --neon-red: #FF3030; /* new red theme for sliders */
+    --dark-bg: #0A0A0A;
+}
+
+body {
+    background-color: #000;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+}
+
+#canvas-wrapper {
+    max-width: 100vw;
+}
+
+/* 播放器条：参考 PieXel Player 视觉——黑底、像素白字、极简，位于画布下方 */
+#player-bar {
+    width: 100%;
+    max-width: 75vw;
+    background: #000;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.player-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(10px, 2.5vw, 16px);
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.pixel-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(8px, 1.8vw, 12px);
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.pixel-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.pixel-button.playing {
+    background: #fff;
+    color: #000;
+}
+
+label {
+    display: block;
+    font-size: 8px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    color: var(--neon-cyan);
+}
+
+/* Compact horizontal slider row */
+.slider-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Remove visible labels (we use aria-label) */
+#cyberpunk-ui label { display: none; }
+
+/* style for range inputs (smaller) */
+#cyberpunk-ui input[type="range"] {
+    width: clamp(60px, 12vw, 110px);
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, var(--neon-red), #FF6B6B);
+    border-radius: 2px;
+    border: none; /* remove border */
+    box-shadow: none; /* remove outer glow */
+}
+
+/* Webkit track & thumb */
+#cyberpunk-ui input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, var(--neon-red), #FF6B6B);
+    height: 6px;
+    border-radius: 2px;
+    border: none;
+}
+#cyberpunk-ui input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neon-red);
+    border: none;
+    box-shadow: none; /* remove glow for a flat red look */
+    margin-top: -3px; /* align with track */
+}
+
+/* Mozilla track & thumb */
+#cyberpunk-ui input[type="range"]::-moz-range-track {
+    background: linear-gradient(90deg, var(--neon-red), #FF6B6B);
+    height: 6px;
+    border-radius: 2px;
+    border: none;
+}
+#cyberpunk-ui input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neon-red);
+    border: none;
+    box-shadow: none; /* remove glow for a flat red look */
+}
+
+#cyberpunk-ui input[type="range"]:focus {
+    outline: none;
+}
+#cyberpunk-ui input[type="range"]::-moz-focus-outer {
+    border: 0;
+}
+
+/* 滑块的赛博朋克主题 */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: var(--neon-pink);
+    outline: none;
+    opacity: 0.7;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: var(--neon-cyan);
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--neon-cyan);
+}
+
+.neon-button.red.playing {
+    background: var(--neon-red);
+    color: #000;
+}
