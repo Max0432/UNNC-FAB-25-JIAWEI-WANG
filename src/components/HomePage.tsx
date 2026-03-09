@@ -8,7 +8,7 @@ function InteractiveAnimation() {
   return (
     <section className="w-full min-h-screen relative shrink-0" aria-label="ef4 交互视觉">
       <iframe
-        src="/ef4-main/index.html"
+        src={`${import.meta.env.BASE_URL}ef4-main/index.html`}
         className="absolute inset-0 w-full h-full border-0"
         title="ef4 交互视觉 - 粒子与音乐"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
