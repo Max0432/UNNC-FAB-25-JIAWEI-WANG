@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig(({ command }) => ({
-    base: command === 'serve' ? '/' : '/UNNC-FABLAB/',
+    base: command === 'serve' ? '/' : '/UNNC-FAB-25-JIAWEI-WANG/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
